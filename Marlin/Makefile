@@ -57,18 +57,18 @@
 #
 
 # This defines the board to compile for (see boards.h for your board's ID)
-HARDWARE_MOTHERBOARD ?= 11
+HARDWARE_MOTHERBOARD ?= 1509
 
 # Arduino source install directory, and version number
 # On most linuxes this will be /usr/share/arduino
-ARDUINO_INSTALL_DIR  ?= ${HOME}/Arduino
-ARDUINO_VERSION      ?= 106
+ARDUINO_INSTALL_DIR  ?= ${HOME}/3D/arduino-1.8.10
+ARDUINO_VERSION      ?= 10810
 
 # The installed Libraries are in the User folder
-ARDUINO_USER_DIR ?= ${HOME}/Arduino
+ARDUINO_USER_DIR ?= ${HOME}/3D/arduino-1.8.10
 
 # You can optionally set a path to the avr-gcc tools. Requires a trailing slash. (ex: /usr/local/avr-gcc/bin)
-AVR_TOOLS_PATH ?=
+AVR_TOOLS_PATH ?= ${HOME}/3D/arduino-1.8.10/hardware/tools/avr/bin/
 
 #Programmer configuration
 UPLOAD_RATE        ?= 57600
@@ -87,10 +87,10 @@ LIQUID_TWI2        ?= 0
 WIRE               ?= 0
 
 # this defines if U8GLIB is needed (may require RELOC_WORKAROUND)
-U8GLIB             ?= 1
+U8GLIB             ?= 0
 
 # this defines whether to include the Trinamic TMCStepper library
-TMC                ?= 1
+TMC                ?= 0
 
 # this defines whether to include the AdaFruit NeoPixel library
 NEOPIXEL           ?= 0
@@ -569,7 +569,7 @@ ifeq ($(HARDWARE_VARIANT), arduino)
   HARDWARE_SUB_VARIANT ?= mega
   VPATH += $(ARDUINO_INSTALL_DIR)/hardware/arduino/avr/variants/$(HARDWARE_SUB_VARIANT)
 else ifeq ($(HARDWARE_VARIANT), Sanguino)
-  VPATH += $(ARDUINO_INSTALL_DIR)/hardware/marlin/avr/variants/sanguino
+  VPATH += $(ARDUINO_INSTALL_DIR)/hardware/anet/avr/variants/sanguino
 else ifeq ($(HARDWARE_VARIANT), archim)
   VPATH   += $(ARDUINO_INSTALL_DIR)/packages/ultimachine/hardware/sam/1.6.9-b/system/libsam
   VPATH   += $(ARDUINO_INSTALL_DIR)/packages/ultimachine/hardware/sam/1.6.9-b/system/CMSIS/CMSIS/Include/
@@ -882,3 +882,6 @@ clean:
 
 # Automaticaly include the dependency files created by gcc
 -include ${patsubst %.o, %.d, ${OBJ}}
+
+test:
+	$(foreach var,$(.VARIABLES),$(info $(var) = $($(var))))
