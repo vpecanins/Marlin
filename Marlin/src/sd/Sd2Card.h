@@ -38,10 +38,10 @@
 
 #include <stdint.h>
 
-uint16_t const SD_INIT_TIMEOUT = 2000,    // init timeout ms
-               SD_ERASE_TIMEOUT = 10000,  // erase timeout ms
-               SD_READ_TIMEOUT = 300,     // read timeout ms
-               SD_WRITE_TIMEOUT = 600;    // write time out ms
+uint16_t const SD_INIT_TIMEOUT = 200,    // init timeout ms
+               SD_ERASE_TIMEOUT = 5000,  // erase timeout ms
+               SD_READ_TIMEOUT = 200,     // read timeout ms
+               SD_WRITE_TIMEOUT = 300;    // write time out ms
 
 // SD card errors
 uint8_t const SD_CARD_ERROR_CMD0 = 0x01,                // timeout error for command CMD0 (initialize card in SPI mode)

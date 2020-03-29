@@ -237,8 +237,8 @@ bool Sd2Card::init(const uint8_t sckRateID, const pin_t chipSelectPin) {
   watchdog_refresh(); // In case init takes too long
 
   // Set pin modes
-  extDigitalWrite(chipSelectPin_, HIGH);  // For some CPUs pinMode can write the wrong data so init desired data value first
-  pinMode(chipSelectPin_, OUTPUT);        // Solution for #8746 by @benlye
+  //extDigitalWrite(chipSelectPin_, HIGH);  // For some CPUs pinMode can write the wrong data so init desired data value first
+  //pinMode(chipSelectPin_, OUTPUT);        // Solution for #8746 by @benlye
   spiBegin();
 
   // Set SCK rate for initialization commands

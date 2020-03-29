@@ -358,9 +358,9 @@ void CardReader::mount() {
   if (root.isOpen()) root.close();
 
   if (!sd2card.init(SPI_SPEED, SDSS)
-    #if defined(LCD_SDSS) && (LCD_SDSS != SDSS)
+    /*#if defined(LCD_SDSS) && (LCD_SDSS != SDSS)
       && !sd2card.init(SPI_SPEED, LCD_SDSS)
-    #endif
+    #endif*/
   ) SERIAL_ECHO_MSG(MSG_SD_INIT_FAIL);
   else if (!volume.init(&sd2card))
     SERIAL_ERROR_MSG(MSG_SD_VOL_INIT_FAIL);

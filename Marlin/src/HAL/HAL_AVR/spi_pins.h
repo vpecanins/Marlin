@@ -51,6 +51,11 @@
   #define AVR_SS_PIN   16
 #endif
 
+// Anet A8 board fix
+#if BOARD_ANET_10
+	#define SS_PIN 31
+#endif
+
 #ifndef SCK_PIN
   #define SCK_PIN  AVR_SCK_PIN
 #endif

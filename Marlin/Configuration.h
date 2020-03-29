@@ -134,7 +134,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Anet A8"
+#define CUSTOM_MACHINE_NAME "Peca & Neira"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
@@ -490,13 +490,23 @@
   //#define DEFAULT_Kp 63.0
   //#define DEFAULT_Ki 2.25
   //#define DEFAULT_Kd 440
-
+/*
   // ANET A8 Standard Extruder at 210 Degree Celsius and 100% Fan
   //(measured after M106 S255 with M303 E0 S210 C8)
   #define DEFAULT_Kp 21.0
   #define DEFAULT_Ki 1.25
   #define DEFAULT_Kd 86.0
-
+*/
+// First round
+#define DEFAULT_Kp 44.93
+#define DEFAULT_Ki 2.69
+#define DEFAULT_Kd 187.71
+/*
+// Second round
+#define DEFAULT_Kp 9.68
+#define DEFAULT_Ki 0.47
+#define DEFAULT_Kd 50.33
+*/
 #endif // PIDTEMP
 
 //===========================================================================
@@ -1676,7 +1686,7 @@
  * just remove some extraneous menu items to recover space.
  */
 //#define NO_LCD_MENUS
-//#define SLIM_LCD_MENUS
+#define SLIM_LCD_MENUS
 
 //
 // ENCODER SETTINGS

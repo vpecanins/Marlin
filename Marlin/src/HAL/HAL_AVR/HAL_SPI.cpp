@@ -34,7 +34,12 @@
 #include "../../inc/MarlinConfig.h"
 
 void spiBegin() {
-  OUT_WRITE(SS_PIN, HIGH);
+
+  SET_OUTPUT(AVR_SS_PIN); // Pin 4 SS Not affected by SPI since is connected to fan
+
+  SET_OUTPUT(SS_PIN); // Pin 31 is actually SS
+  OUT_WRITE(SS_PIN, LOW);
+
   SET_OUTPUT(SCK_PIN);
   SET_INPUT(MISO_PIN);
   SET_OUTPUT(MOSI_PIN);
