@@ -95,13 +95,14 @@ void menu_main() {
       ACTION_ITEM(MSG_PAUSE_PRINT, ui.pause_print);
     #endif
     #if MACHINE_CAN_STOP
-      SUBMENU(MSG_STOP_PRINT, []{
+      ACTION_ITEM(MSG_STOP_PRINT, ui.abort_print);
+      /*SUBMENU(MSG_STOP_PRINT, []{
         MenuItem_confirm::select_screen(
           GET_TEXT(MSG_BUTTON_STOP), GET_TEXT(MSG_BACK),
           ui.abort_print, ui.goto_previous_screen,
           GET_TEXT(MSG_STOP_PRINT), (PGM_P)nullptr, PSTR("?")
         );
-      });
+      });*/
     #endif
     SUBMENU(MSG_TUNE, menu_tune);
   }
