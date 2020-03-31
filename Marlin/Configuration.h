@@ -497,16 +497,11 @@
   #define DEFAULT_Ki 1.25
   #define DEFAULT_Kd 86.0
 */
-// First round
-#define DEFAULT_Kp 44.93
-#define DEFAULT_Ki 2.69
-#define DEFAULT_Kd 187.71
-/*
-// Second round
-#define DEFAULT_Kp 9.68
-#define DEFAULT_Ki 0.47
-#define DEFAULT_Kd 50.33
-*/
+#define DEFAULT_Kp 26.65
+#define DEFAULT_Ki 2.07
+#define DEFAULT_Kd 85.69
+
+
 #endif // PIDTEMP
 
 //===========================================================================
@@ -1195,13 +1190,13 @@
 //#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
-//#define MESH_BED_LEVELING
+#define MESH_BED_LEVELING
 
 /**
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1312,7 +1307,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-//#define LCD_BED_LEVELING
+#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
@@ -1483,9 +1478,9 @@
 #define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
-#define PREHEAT_2_LABEL       "ABS"
-#define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED     90
+#define PREHEAT_2_LABEL       "PETG"
+#define PREHEAT_2_TEMP_HOTEND 210
+#define PREHEAT_2_TEMP_BED     60
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
 /**
